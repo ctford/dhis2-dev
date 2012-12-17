@@ -1,0 +1,2 @@
+#!/usr/bin
+dhis2-service/bin/startup.sh && tail -f dhis2-service/logs/catalina.out
