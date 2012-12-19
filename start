@@ -1,2 +1,8 @@
-#!/usr/bin
-dhis2-service/bin/startup.sh && tail -f dhis2-service/logs/catalina.out
+#!/bin/sh
+export DHIS2_HOME='/vagrant/dhis2-home'
+echo "Using DHIS2_HOME: $DHIS2_HOME"
+
+export JAVA_OPTS='-Xmx1000m -XX:MaxPermSize=200m'
+echo "Using JAVA_OPTS: $JAVA_OPTS"
+
+dhis2-server/bin/startup.sh && tail -f dhis2-server/logs/catalina.out
