@@ -1,20 +1,12 @@
 #!/bin/sh
 
-apt-get install python-software-properties
+sudo -u postgres psql -c "CREATE ROLE dhis2 WITH ENCRYPTED PASSWORD 'dhis2';"
+sudo -u postgres psql -c "ALTER USER dhis2 LOGIN;"
+sudo -u postgres createdb -O postgres dhis2
 
 add-apt-repository ppa:webupd8team/java
-add-apt-repository http://ppa.launchpad.net/webupd8team/java/ubuntu 12.04 main
-
 apt-get update
-apt-get install oracle-jdk7-installer
-apt-get install tomcat7-user
+apt-get install python-software-properties
+apt-get -y install tomcat7-user
 tomcat7-instance-create dhis2-server
-
-sudo -u postgres -c "/usr/bin/createuser -PE dhis2"
-sudo -u postgres -c "/usr/bin/createdb -O postgres dhis2"
-
-apt-get install unzip
-unzip dhis.war -d dhis2-server/webapps
-
-export JAVA_HOME='/usr/lib/jvm/java-7-openjdk'
-export DHIS2_HOME='/vagrant/dhis2-home'
+unzip -o dhis.war -d dhis2-server/webapps/dhis2
