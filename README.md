@@ -4,4 +4,4 @@
 * cd /vagrant
 * sudo ./setup
 * ./start
-* http://localhost:8080/dhis2 (on both host and VM)
+* Access DHIS2 at http://localhost:8080/dhis2 (on both host and VM) with credentials: admin/district
