@@ -19,6 +19,7 @@ exec { "apt-update":
 
 Exec["pre-install-update"] -> Exec["install-add-apt"] -> Exec["add-apt-repository"] -> Exec["apt-update"] -> Package <| |>
 
+include curl
 include openjdk7
 include postgres
 include tomcat7

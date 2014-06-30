@@ -5,3 +5,4 @@
 * sudo ./setup
 * ./start
 * Access DHIS2 at http://localhost:8080/dhis2 (on both host and VM) with credentials: admin/district
+* ./dumpdata (only when you need test dataset)

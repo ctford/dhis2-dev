@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl -H "Content-Type: application/xml" -u admin:district -d @export_metaData.xml "http://localhost:8080/dhis2/api/metaData" -X POST -v && \
+curl -H "Content-Type: application/xml" -u admin:district -d @export_data.xml "http://localhost:8080/dhis2/api/dataValueSets" -X POST -v
