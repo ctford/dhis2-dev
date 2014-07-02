@@ -1,7 +1,8 @@
-* Get dhis.war into the current directory e.g. wget http://apps.dhis2.org/ci/job/dhis-web-trunk/lastSuccessfulBuild/artifact/dhis-2/dhis-web/dhis-web-portal/target/dhis.war
+* Get dhis.war into the current directory e.g. wget https://www.dhis2.org/download/releases/2.15/dhis.war
 * vagrant up
 * vagrant ssh
 * cd /vagrant
 * sudo ./setup
 * ./start
-* http://localhost:8080/dhis2 (on both host and VM)
+* Access DHIS2 at http://localhost:8080/dhis2 (on both host and VM) with credentials: admin/district
+* ./dumpdata (only when you need test dataset)
